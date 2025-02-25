@@ -13,6 +13,10 @@ const configServer = require("./src/config/server");
 const filterPostDate = require("./src/config/postDate");
 const isProduction = configServer.isProduction;
 
+// eleventy.js
+
+const eleventyPluginSharpImages = require("@codestitchofficial/eleventy-plugin-sharp-images");
+
 
 module.exports = function (eleventyConfig) {
     /**=====================================================================
@@ -42,6 +46,13 @@ module.exports = function (eleventyConfig) {
                   PLUGINS - Adds additional eleventy functionality 
     =======================================================================*/
     /** https://www.11ty.dev/docs/plugins/ */
+
+        // other plugins
+
+        eleventyConfig.addPlugin(eleventyPluginSharpImages, {
+            urlPath: "/assets/images",
+            outputDir: "public/assets/images",
+        });
 
     /**
      *  ELEVENTY NAVIGATION
