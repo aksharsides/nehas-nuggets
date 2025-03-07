@@ -1,6 +1,6 @@
 module.exports = {
-    "name": "Code Stitch Web Designs",
-    "email": "help@codestitch.app",
+    "name": "Nehas Nuggets",
+    "email": "nehasnuggets@gmail.com",
     "phoneForTel": "555-779-4407",
     "phoneFormatted": "(555) 779-4407",
     "address": {
@@ -14,7 +14,7 @@ module.exports = {
     },
     "socials": {
         "facebook": "https://www.facebook.com/",
-        "instagram": "https://www.instagram.com/",
+        "instagram": "https://www.instagram.com/nehasnuggets/",
     },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
     "domain": "https://www.example.com"
