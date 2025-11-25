@@ -1,103 +1,131 @@
 ---
-title: 'Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO'
-description: 'Meta description for the page'
-preloadImg: '/assets/images/landing.jpg'
-permalink: '/'
-tags: 'sitemap' # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
+title: "Pixel Perfect Websites | Code Stitch Web Designs | Denver, CO"
+description: "Meta description for the page"
+preloadImg: "/assets/images/landing.jpg"
+permalink: "/"
+tags: "sitemap" # Sitemap will use all pages in content/, due to content.json. As index.html is not included in content/ we need to manually add the sitemap tag to this page (only).
 eleventyNavigation:
   key: Home
   order: 100
 ---
 
-{% extends "layouts/base.html" %}
+{% extends "layouts/base.html" %} {% block head %}
+<link rel="stylesheet" href="/assets/css/local.css" />
+<link rel="stylesheet" href="/assets/css/critical.css" />
 
-{% block head %}
-    <link rel="stylesheet" href="/assets/css/local.css"/>
-    <link rel="stylesheet" href="/assets/css/critical.css"/>
+<!-- Script for Netlify Identity -->
+<script
+  defer
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"
+></script>
+<script defer>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
 
-    <!-- Script for Netlify Identity -->
-    <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script defer>
-        if (window.netlifyIdentity) {
-            window
-                .netlifyIdentity
-                .on('init', (user) => {
-                    if (!user) {
-                        window
-                            .netlifyIdentity
-                            .on('login', () => {
-                                document.location.href = '/admin/';
-                            });
-                    }
-                });
-        }
-    </script>
-
-    <!-- JSON Schema Markup -->
-    <script type="application/ld+json">
-        {
-            "@context": "http://schema.org",
-            "@type": "LocalBusiness",
-            "name": "{{ client.name }}",
-            {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
-            {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
-            {% if client.email %}"email": "{{ client.email }}",{% endif %}
-            {% if client.address %}
-                "address": {
-                    "@type": "PostalAddress"{% if client.address.lineOne %},
-                        "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
-                    {% endif %}
-                    {% if client.address.city %},
-                        "addressLocality": "{{ client.address.city }}"
-                    {% endif %}
-                    {% if client.address.state %},
-                        "addressRegion": "{{ client.address.state }}"
-                    {% endif %}
-                    {% if client.address.zip %},
-                        "postalCode": "{{ client.address.zip }}"
-                    {% endif %}
-                    {% if client.address.country %},
-                        "addressCountry": "{{ client.address.country }}"
-                    {% endif %}
-                },
-            {% endif %}
-            {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
-            {% if client.socials %}
-                "sameAs": [{% for platform, url in client.socials %}
-                        {% if not loop.first %},{% endif %}
-                        "{{ url }}"
-                    {% endfor %}]
-            {% endif %}
-        }
-    </script>
-{% endblock %}
-
-{% block body %}
+<!-- JSON Schema Markup -->
+<script type="application/ld+json">
+  {
+      "@context": "http://schema.org",
+      "@type": "LocalBusiness",
+      "name": "{{ client.name }}",
+      {% if preloadImg %}"image": "{{ preloadImg }}",{% endif %}
+      {% if client.phoneFormatted %}"telephone": "{{ client.phoneFormatted }}",{% endif %}
+      {% if client.email %}"email": "{{ client.email }}",{% endif %}
+      {% if client.address %}
+          "address": {
+              "@type": "PostalAddress"{% if client.address.lineOne %},
+                  "streetAddress": "{{ client.address.lineOne }}{% if client.address.lineTwo %}, {{ client.address.lineTwo }}{% endif %}"
+              {% endif %}
+              {% if client.address.city %},
+                  "addressLocality": "{{ client.address.city }}"
+              {% endif %}
+              {% if client.address.state %},
+                  "addressRegion": "{{ client.address.state }}"
+              {% endif %}
+              {% if client.address.zip %},
+                  "postalCode": "{{ client.address.zip }}"
+              {% endif %}
+              {% if client.address.country %},
+                  "addressCountry": "{{ client.address.country }}"
+              {% endif %}
+          },
+      {% endif %}
+      {% if client.domain and page.url %}"url": "{{ client.domain }}{{ page.url }}",{% endif %}
+      {% if client.socials %}
+          "sameAs": [{% for platform, url in client.socials %}
+                  {% if not loop.first %},{% endif %}
+                  "{{ url }}"
+              {% endfor %}]
+      {% endif %}
+  }
+</script>
+{% endblock %} {% block body %}
 
 <!-- ============================================ -->
 <!--                    Hero                      -->
 <!-- ============================================ -->
 
 <section id="hero-1350">
-    <div class="cs-container">
-        <div class="cs-content">
-            <span class="cs-topper">Welcome To Nehas Nuggets</span>
-            <h1 class="cs-title">Instagram Social Agency</h1>
-            <p class="cs-text">
-                No waffle. We charge per post and privide analytics. Our results do the talking.
-            </p>
-            <a href="" class="cs-button-solid">Free Consultation</a>
-        </div>
+  <div class="cs-container">
+    <div class="cs-top-content">
+      <div class="cs-content">
+        <span class="cs-topper">Social Media Changed Everything in 2025</span>
+        <h1 class="cs-title">EVEN IF YOU’RE #1 ON MAPS</h1>
+        <p class="cs-text">ONLY 17% SEE YOU</p>
+        <a href="" class="cs-button-solid">Free Consultation</a>
+      </div>
+      <div class="cs-content">
+        <p class="cs-text">
+          The remaining 83% of brand growth goes to competitors who dominate: </p>
+          <p>
+            Feeds• Moments • Voice – where customers actually search & engage.
+          </p> 
+          
+         <li><span>S</span> SOCIAL FEED: be top-of-scroll not just top of map-pin. </li> 
+         <li><span>M</span> MEDIA MOMENT: be seen on Insta/TikTok, not hidden in 3-pack. </li> 
+          <li><span>V</span> VISUAL VOICE: build identity, trust & repeat visits.</li> 
+          <p>67% of 18-24-year-olds use Instagram to
+          discover local businesses. Plus: global social-media users grew by ~5%
+          in the last year to 5.24 billion — the clock is ticking.</p>
+        </p>
+      </div>
     </div>
-    <!--Bubble Groups-->
-    <div class="cs-bubbles cs-bubbles1" aria-hidden="true"></div>
-    <div class="cs-bubbles cs-bubbles2" aria-hidden="true"></div>
-    <!-- Background Image, background image added in the css at 1600px for parallax effect -->
-    <picture class="cs-background">
-        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/abstract-m.jpg">
-        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/abstract.jpg">
-        <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/abstract.jpg" alt="abstract background" width="2250" height="1500" aria-hidden="true">
-    </picture>
+  </div>
+
+  <!--Bubble Groups-->
+  <div class="cs-bubbles cs-bubbles1" aria-hidden="true"></div>
+  <div class="cs-bubbles cs-bubbles2" aria-hidden="true"></div>
+  <!-- Background Image, background image added in the css at 1600px for parallax effect -->
+  <picture class="cs-background">
+    <source
+      media="(max-width: 600px)"
+      srcset="
+        https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/abstract-m.jpg
+      "
+    />
+    <source
+      media="(min-width: 601px)"
+      srcset="
+        https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/abstract.jpg
+      "
+    />
+    <img
+      decoding="async"
+      src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/abstract.jpg"
+      alt="abstract background"
+      width="2250"
+      height="1500"
+      aria-hidden="true"
+    />
+  </picture>
 </section>
 
 <!-- ============================================ -->
@@ -105,101 +133,154 @@ eleventyNavigation:
 <!-- ============================================ -->
 
 <section id="projects-605">
-    <div class="cs-container">
-        <div class="cs-content">
-            <div class="cs-flex-group">
-                <span class="cs-topper">Our Services</span>
-                <h2 class="cs-title">Some of our residential painting projects</h2>
-            </div>
-            <p class="cs-text">
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.
-            </p>
-        </div>
-        <ul class="cs-card-group">
-            <li class="cs-item">
-                <a class="cs-link" href="https://www.instagram.com/neasdentemple/reel/CzliR3usjZW/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="/assets/images/1.png">
-                            <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="/assets/images/1.png">
-                            <img loading="lazy" decoding="async" src="/assets/images/1.png" alt="bathroom" width="413" height="450" aria-hidden="true">
-                        </picture>
-                        <span class="cs-header">Authentic</span>
-                        <p class="cs-item-text">
-                            24.9 million views 1.8mn likes 2800+ shares 3300+ comments
-                        </p>
-                        <span class="cs-number">01</span>
-                    </div>
-                    <h3 class="cs-h3">Authentic</h3>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a class="cs-link" href="https://www.instagram.com/p/DCbVKfQuRwt/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="/assets/images/2.png">
-                            <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="/assets/images/2.png">
-                            <img loading="lazy" decoding="async" src="/assets/images/2.png" alt="bathroom" width="413" height="450" aria-hidden="true">
-                        </picture>
-                        <span class="cs-header">On-trend</span>
-                        <p class="cs-item-text">
-                            1.2K+ likes 5 comments 65 shares
-                        </p>
-                        <span class="cs-number">02</span>
-                    </div>
-                    <h3 class="cs-h3">On-trend</h3>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a class="cs-link" href="https://www.instagram.com/p/DBve5QXN4HG/">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="/assets/images/3.png">
-                            <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="/assets/images/3.png">
-                            <img loading="lazy" decoding="async" src="/assets/images/3.png" alt="bathroom" width="413" height="450" aria-hidden="true">
-                        </picture>
-                        <span class="cs-header">Seasonal</span>
-                        <p class="cs-item-text">
-                            3.8K+ likes
-11 comments
-150+ shares
-                        </p>
-                        <span class="cs-number">03</span>
-                    </div>
-                    <h3 class="cs-h3">Seasonal</h3>
-                </a>
-            </li>
-            <li class="cs-item">
-                <a class="cs-link" href="https://www.instagram.com/reel/CsaxfFwMOnq/?igsh=MXFtcm5hbXE1dHR3aw==">
-                    <div class="cs-info">
-                        <picture class="cs-background">
-                            <!--Mobile Image-->
-                            <source media="(max-width: 600px)" srcset="/assets/images/4.png">
-                            <!--Tablet and above Image-->
-                            <source media="(min-width: 601px)" srcset="/assets/images/4.png">
-                            <img loading="lazy" decoding="async" src="/assets/images/4.png" alt="bathroom" width="413" height="450" aria-hidden="true">
-                        </picture>
-                        <span class="cs-header">Engaging</span>
-                        <p class="cs-item-text">
-                            13K likes
-                            98 comments
-                            1K+ shares                            
-                        </p>
-                        <span class="cs-number">04</span>
-                    </div>
-                    <h3 class="cs-h3">Engaging</h3>
-                </a>
-            </li>
-        </ul>
+  <div class="cs-container">
+    <div class="cs-content">
+      <div class="cs-flex-group">
+        <span class="cs-topper">Our Services</span>
+        <h2 class="cs-title">Some of our residential painting projects</h2>
+      </div>
+      <p class="cs-text">
+        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+        sint. Velit officia consequat duis enim velit mollit. Amet minim mollit
+        non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia
+        consequat duis enim velit mollit.
+      </p>
     </div>
+    <ul class="cs-card-group">
+      <li class="cs-item">
+        <a
+          class="cs-link"
+          href="https://www.instagram.com/neasdentemple/reel/CzliR3usjZW/"
+        >
+          <div class="cs-info">
+            <picture class="cs-background">
+              <!--Mobile Image-->
+              <source
+                media="(max-width: 600px)"
+                srcset="/assets/images/1.png"
+              />
+              <!--Tablet and above Image-->
+              <source
+                media="(min-width: 601px)"
+                srcset="/assets/images/1.png"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/1.png"
+                alt="bathroom"
+                width="413"
+                height="450"
+                aria-hidden="true"
+              />
+            </picture>
+            <span class="cs-header">Authentic</span>
+            <p class="cs-item-text">
+              24.9 million views 1.8mn likes 2800+ shares 3300+ comments
+            </p>
+            <span class="cs-number">01</span>
+          </div>
+          <h3 class="cs-h3">Authentic</h3>
+        </a>
+      </li>
+      <li class="cs-item">
+        <a class="cs-link" href="https://www.instagram.com/p/DCbVKfQuRwt/">
+          <div class="cs-info">
+            <picture class="cs-background">
+              <!--Mobile Image-->
+              <source
+                media="(max-width: 600px)"
+                srcset="/assets/images/2.png"
+              />
+              <!--Tablet and above Image-->
+              <source
+                media="(min-width: 601px)"
+                srcset="/assets/images/2.png"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/2.png"
+                alt="bathroom"
+                width="413"
+                height="450"
+                aria-hidden="true"
+              />
+            </picture>
+            <span class="cs-header">On-trend</span>
+            <p class="cs-item-text">1.2K+ likes 5 comments 65 shares</p>
+            <span class="cs-number">02</span>
+          </div>
+          <h3 class="cs-h3">On-trend</h3>
+        </a>
+      </li>
+      <li class="cs-item">
+        <a class="cs-link" href="https://www.instagram.com/p/DBve5QXN4HG/">
+          <div class="cs-info">
+            <picture class="cs-background">
+              <!--Mobile Image-->
+              <source
+                media="(max-width: 600px)"
+                srcset="/assets/images/3.png"
+              />
+              <!--Tablet and above Image-->
+              <source
+                media="(min-width: 601px)"
+                srcset="/assets/images/3.png"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/3.png"
+                alt="bathroom"
+                width="413"
+                height="450"
+                aria-hidden="true"
+              />
+            </picture>
+            <span class="cs-header">Seasonal</span>
+            <p class="cs-item-text">3.8K+ likes 11 comments 150+ shares</p>
+            <span class="cs-number">03</span>
+          </div>
+          <h3 class="cs-h3">Seasonal</h3>
+        </a>
+      </li>
+      <li class="cs-item">
+        <a
+          class="cs-link"
+          href="https://www.instagram.com/reel/CsaxfFwMOnq/?igsh=MXFtcm5hbXE1dHR3aw=="
+        >
+          <div class="cs-info">
+            <picture class="cs-background">
+              <!--Mobile Image-->
+              <source
+                media="(max-width: 600px)"
+                srcset="/assets/images/4.png"
+              />
+              <!--Tablet and above Image-->
+              <source
+                media="(min-width: 601px)"
+                srcset="/assets/images/4.png"
+              />
+              <img
+                loading="lazy"
+                decoding="async"
+                src="/assets/images/4.png"
+                alt="bathroom"
+                width="413"
+                height="450"
+                aria-hidden="true"
+              />
+            </picture>
+            <span class="cs-header">Engaging</span>
+            <p class="cs-item-text">13K likes 98 comments 1K+ shares</p>
+            <span class="cs-number">04</span>
+          </div>
+          <h3 class="cs-h3">Engaging</h3>
+        </a>
+      </li>
+    </ul>
+  </div>
 </section>
-                                
 
-    {% include 'components/cta.html' %}
-{% endblock %}
+{% include 'components/cta.html' %} {% endblock %}
