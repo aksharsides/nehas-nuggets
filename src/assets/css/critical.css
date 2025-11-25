@@ -82,7 +82,6 @@
     text-align: inherit;
     letter-spacing: 0.1em;
     font-weight: 700;
-    color: #e8e8e8;
     margin-bottom: 0.5rem;
     display: block;
   }
@@ -107,8 +106,29 @@
     margin: 0 0 2.5rem 0;
     color: #e8e8e8;
   }
+  #hero-1350 .cs-text-box-small {
+    width: 2.5rem;
+    /* w-10 */
+    height: 2.5rem;
+    /* h-10 */
+    background-color: #fff;
+    /* bg-black */
+    color: #000;
+    /* text-white */
+    display: flex;
+    /* flex */
+    align-items: center;
+    /* items-center */
+    justify-content: center;
+    /* justify-center */
+    font-weight: 900;
+    /* font-black */
+    font-size: 1.125rem;
+    /* text-lg */
+    border: 2px solid #fff;
+  }
   #hero-1350 .cs-button-solid {
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 3.5rem;
     text-decoration: none;
     font-weight: 700;
